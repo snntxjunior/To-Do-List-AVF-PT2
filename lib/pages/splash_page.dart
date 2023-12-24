@@ -41,7 +41,7 @@ class _SplashPageState extends State<SplashPage> {
             ),
             SizedBox(height: 16),
             Text(
-              'Firebase Login App',
+              'Aplicativo de login do Firebase - Lista de Tarefas',
               style: TextStyle(
                 fontSize: 28,
               ),
