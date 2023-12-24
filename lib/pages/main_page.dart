@@ -12,22 +12,22 @@ class _MainPageState extends State<MainPage> {
     User? user = FirebaseAuth.instance.currentUser;
     if (user == null) {
       return Container(
-        child: Text("User not found"),
+        child: Text("Usuário não encontrado"),
       );
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main"),
+        title: Text("Principal"),
         actions: [
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: _logout,
-            tooltip: "Logout",
+            tooltip: "Sair",
           )
         ],
       ),
       body: Container(
-        child: Text("Authorized as ${user.email}"),
+        child: Text("Autorizado como ${user.email}"),
       ),
     );
   }
