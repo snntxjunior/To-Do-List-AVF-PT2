@@ -26,7 +26,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         builder: (context) {
           return AlertDialog(
             content: Text(
-              'Password rest link sent! Check your email!',
+              'Link de redefinição de senha enviado! Verifique seu e-mail!',
             ),
           );
         },
@@ -59,7 +59,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               horizontal: 25.0,
             ),
             child: Text(
-              'Enter Your Email and we will send you a password reset link',
+              'Digite seu e-mail e enviaremos um link de redefinição de senha',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 20,
@@ -97,7 +97,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           MaterialButton(
             onPressed: passwordReset,
-            child: Text('Reset Password'),
+            child: Text('Redefinir senha'),
             color: Colors.deepOrange[200],
           ),
         ],
