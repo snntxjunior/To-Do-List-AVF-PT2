@@ -21,7 +21,7 @@ class _RegisterPage extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "Register new account"),
+      appBar: CustomAppBar(title: "Registrar nova conta"),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: Form(
@@ -39,13 +39,13 @@ class _RegisterPage extends State<RegisterPage> {
                   bool emailValid = RegExp(
                           r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                       .hasMatch(email);
-                  return emailValid ? null : "Email is not valid";
+                  return emailValid ? null : "E-mail não é válido";
                 },
               ),
               SizedBox(height: 24),
               CustomInputField(
                 keyboardType: TextInputType.visiblePassword,
-                hintText: "Password",
+                hintText: "Senha",
                 obscureText: true,
                 controller: _passwordController,
                 validator: (String? password) {
@@ -53,14 +53,14 @@ class _RegisterPage extends State<RegisterPage> {
                     return null;
                   }
                   if (password.length < 6) {
-                    return "Password is too short";
+                    return "A senha é muito curta";
                   }
                 },
               ),
               SizedBox(height: 24),
               CustomInputField(
                 keyboardType: TextInputType.visiblePassword,
-                hintText: "Password Confirmation",
+                hintText: "Confirmação da Senha",
                 obscureText: true,
                 controller: _passwordConfirmationController,
                 validator: (String? password) {
@@ -68,7 +68,7 @@ class _RegisterPage extends State<RegisterPage> {
                     return null;
                   }
                   if (password != _passwordConfirmationController.value.text) {
-                    return "Password is not confirmed";
+                    return "A senha não foi confirmada";
                   }
                 },
               ),
@@ -80,14 +80,14 @@ class _RegisterPage extends State<RegisterPage> {
                     Padding(
                       padding: EdgeInsets.only(left: 8),
                       child: Text(
-                        "By creating an account you agree to our",
+                        "Ao criar uma conta você concorda com nossos",
                         style: TextStyle(
                           color: Color(0xFFa8a8a7),
                         ),
                       ),
                     ),
                     TextButton(
-                      child: Text('Terms & Conditions'),
+                      child: Text('Termos e Condições'),
                       onPressed: () {
                         print("// Terms & Conditions");
                       },
@@ -100,7 +100,7 @@ class _RegisterPage extends State<RegisterPage> {
               ),
               SizedBox(height: 24),
               ElevatedButton(
-                child: Text("Register"),
+                child: Text("Registrar"),
                 onPressed: !_agreeWithTermsAndConditions
                     ? null
                     : () {
@@ -118,13 +118,13 @@ class _RegisterPage extends State<RegisterPage> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     content: Text(
-                                        'Failed to register: ${exception.message}')),
+                                        'Falha ao registrar: ${exception.message}')),
                               );
                             } else {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
                                     content: Text(
-                                        'Unhandled register error ${exception}')),
+                                        'Erro de registro não tratado ${exception}')),
                               );
                             }
                           });
@@ -139,7 +139,7 @@ class _RegisterPage extends State<RegisterPage> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Text(
-                    "Already have an account?",
+                    "Já tem uma conta?",
                     style: TextStyle(
                       color: Color(0xFFb8b8b8),
                     ),
